@@ -1,5 +1,7 @@
 from telegram.ext import ApplicationBuilder, CommandHandler,ContextTypes
 from telegram import Update
+from config import BOT_TOKEN
+
 
 async def start(update:Update, context:ContextTypes.DEFAULT_TYPE):
     user= update.message.from_user
@@ -12,7 +14,7 @@ async def start(update:Update, context:ContextTypes.DEFAULT_TYPE):
 async def info(update:Update,context:ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Bot criado com Python")
 
-app= ApplicationBuilder().token("8679049793:AAFI8F2Bj2Fc-nqzdixl1-fgw0jmkwIF-r0").build()
+app= ApplicationBuilder().token("BOT_TOKEN").build()
 
 print("Bot rodando!")
 app.add_handler(CommandHandler("start",start))
